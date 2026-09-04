@@ -2,11 +2,12 @@ import { test, expect } from '@fixtures/pages.fixture'
 import { formData } from '@datafactory/contactUsData.json'
 
 test.describe("Visit Contact Us page for Dotmatics", ()=>{
+    test.use({ storageState: 'playwright/.auth/cookies.json'})
     test.beforeEach(async ({ contactUsPage }) => {
         await contactUsPage.goto()
     })
 
-    test('Validate Get in touch page is present', async ({ contactUsPage }) => {
+    test('Validate Contact Us page is present', async ({ contactUsPage }) => {
         await expect(contactUsPage.bannerHeading).toContainText('Contact')
         await expect(contactUsPage.bannerBody).toContainText('Connect with us to discuss your software needs, submit media inquiries, request support, and more.')
     })

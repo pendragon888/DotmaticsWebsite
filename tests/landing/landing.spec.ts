@@ -1,6 +1,7 @@
 import { test, expect } from '@fixtures/pages.fixture'
 
 test.describe("Visit landing page for Dotmatics", ()=>{
+    test.use({ storageState: 'playwright/.auth/cookies.json'})
     test('Validate Landing page present', async ({ landingPage }) => {
         await landingPage.goto()
         await expect (landingPage.bannerHeading).toBeVisible()
