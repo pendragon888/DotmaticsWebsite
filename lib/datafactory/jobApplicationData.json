@@ -1,0 +1,20 @@
+{
+    "formData":{
+        "firstName": "Kevin",
+        "lastName": "D",
+        "email": "pendragon888@hotmail.com",
+        "phoneCountry": "United Kingdom",
+        "phone": "07827928863",
+        "location": "Cambridge, England, United Kingdom",
+        "jobTitle": "SDET",
+        "missionQuestion": "What inspires me most is how directly Dotmatics’ platform supports scientific discovery. Bringing data and decision-making together into one system helps researchers move faster and with more confidence. Having worked in a scientific environment at Abcam, I understand how important reliable systems are, so being part of building a platform like LUMA—where quality enables real-world research impact—is something I find really motivating.",
+        "aboutUsQuestion": "Job board, careers website,",
+        "describeTestQuestion": "Built a Playwright test suite using Typescript to smoke test Dotmatics Website. To demonstrate abilites to create e2e tests via black box testing",
+        "authorisedToWork": "Yes",
+        "supportAuthorsation": "No",
+        "currentEmployee" : "No",
+        "country": "United Kingdom",
+        "linkedIn": "https://www.linkedin.com/in/kevin-dang-0b623ab5/",
+        "websitePortfolio": "https://github.com/pendragon888/DotmaticsWebsite"
+    }
+}
