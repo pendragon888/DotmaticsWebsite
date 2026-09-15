@@ -1,5 +1,6 @@
 import { test, expect } from '@fixtures/pages.fixture'
 import { formData } from '@datafactory/jobApplicationData.json'
+import path from 'path'
 
 test.describe("Visit Jobs page for Dotmatics", ()=>{
     test.use({ storageState: 'playwright/.auth/cookies.json'})
@@ -50,6 +51,18 @@ test.describe("Visit Jobs page for Dotmatics", ()=>{
         await jobsPage.formLocationCombobox.fill(formData.location);
         await page.locator('iframe[title="Greenhouse Job Board"]').contentFrame().locator('#react-select-candidate-location-option-0').click();
 
+        //Upload CV
+        const fileChooserPromiseCV = page.waitForEvent('filechooser');
+        await jobsPage.formResumeCVAttachButton.click();
+        const fileChooserCV = await fileChooserPromiseCV;
+        await fileChooserCV.setFiles(path.resolve('lib/files/Kevin Dang (QA SDET) Dotmatics CV.pdf'));
+
+        // Upload Cover Letter
+        const fileChooserPromiseCL = page.waitForEvent('filechooser');
+        await jobsPage.formCoverLetterAttachButton.click();
+        const fileChooserCL = await fileChooserPromiseCL;
+        await fileChooserCL.setFiles(path.resolve('lib/files/Kevin Dang (QA SDET) Dotmatics Cover Letter.pdf'));
+
         await expect (jobsPage.formMission).toBeVisible()
         await jobsPage.formMission.click();
         await jobsPage.formMission.fill(formData.missionQuestion);
@@ -87,5 +100,7 @@ test.describe("Visit Jobs page for Dotmatics", ()=>{
         await jobsPage.formWebsitePortfolio.fill(formData.websitePortfolio);
 
         // Do not submit due to production environment
+        await expect (jobsPage.formSubmitApplicationButton).toBeVisible()
+        //await jobsPage.formSubmitApplicationButton.click()
     })
 })

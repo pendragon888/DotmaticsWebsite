@@ -31,6 +31,7 @@ export class JobsPage {
     readonly formCountry: Locator
     readonly formLinkedInProfile: Locator
     readonly formWebsitePortfolio: Locator
+    readonly formSubmitApplicationButton: Locator
 
      constructor(page: Page) {
         this.page = page
@@ -66,6 +67,7 @@ export class JobsPage {
         this.formCountry = page.locator('iframe[title="Greenhouse Job Board"]').contentFrame().getByRole('button', { name: 'Toggle flyout' }).nth(5)
         this.formLinkedInProfile = page.locator('iframe[title="Greenhouse Job Board"]').contentFrame().getByRole('textbox', { name: 'LinkedIn Profile' })
         this.formWebsitePortfolio = page.locator('iframe[title="Greenhouse Job Board"]').contentFrame().getByRole('textbox', { name: 'Website/Portfolio' })
+        this.formSubmitApplicationButton = page.locator('iframe[title="Greenhouse Job Board"]').contentFrame().getByRole('button', { name: 'Submit application' })
     }
 
     async goto(){
