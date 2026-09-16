@@ -51,6 +51,20 @@ Steps on how to install dependencies and execute the tests.
     npx playwright test contact-us.spec.ts
     ```
 
+## Areas of Interest / Suggested Improvements
+
+### data-testid
+
+- Adding the 'data-testid' HTML attribute to uniquely identified elements in the UI would contribute towards the reliability, maintainance, stability and scalability of the automated tests. One area that was tricky to locate elements was on the Job Application Form.
+
+![AddDataTestIDs](README_images/AddDataTestid.jpg)
+
+### Missing alt-text from images
+- A few alt-text descriptions to images are missing such as on the Antibody & Protein Engineering webpage images for the Luma platform. Adding this would help towards accessibility compliance.
+
+![MissingAltText](README_images/MissingAltText.jpg)
+
+
 ## Testing Framework Developed By
 
 **Kevin D**
